@@ -1,16 +1,16 @@
-#custom-button {
+/* #custom-button { */
   /* background-color: #8cc0de; Change to the desired color */
-  background-color: #8a2952;
+  /* background-color: #8a2952; */
   /* border-color: #8cc0de; Change to the desired color */
   /* border-color: #faf0d7; */
-  border-color: #8a2952;
+  /* border-color: #8a2952; */
   /* color: #00215e; Change to the desired color */
-}
-
+/* } */
+/* 
 #custom-button:hover {
   background-color: #00215e;
   border-color: #00215e;
-}
+} */
 
 #custom-card-storystudio {
   /* border: 7px solid rgba(204, 238, 188, 0.5); */

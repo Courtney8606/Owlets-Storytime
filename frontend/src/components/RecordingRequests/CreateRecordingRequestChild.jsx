@@ -3,7 +3,7 @@ import { useState } from "react";
 import { createRecordingRequest } from "../../services/recordings";
 import PropTypes from "prop-types";
 import "./CreateRecordingRequestChild.css";
-import ChildSendButton from "../ChildViewButton/ChildButtonSend";
+import ChildViewButtonV2 from "../Buttons/ChildViewButtonV2";
 
 const CreateRecordingRequestChild = ({ username, connections, onSubmit }) => {
   const [requestDescription, setRequestDescription] = useState("");
@@ -74,7 +74,7 @@ const CreateRecordingRequestChild = ({ username, connections, onSubmit }) => {
             ))}
         </select>
         <br />
-        <ChildSendButton />
+        <ChildViewButtonV2 text="Send" />
       </form>
       <div>
         <p>{error}</p>

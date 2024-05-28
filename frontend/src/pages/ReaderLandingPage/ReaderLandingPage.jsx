@@ -1,6 +1,3 @@
-import ParentViewButton from "../../components/ParentViewButton/ParentViewButton";
-import ReaderViewButton from "../../components/ReaderViewButton/ReaderViewButton";
-import ChildViewButton from "../../components/ChildViewButton/ChildViewButton";
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import recordingImage from "../../assets/recording.png";

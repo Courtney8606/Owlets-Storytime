@@ -7,6 +7,7 @@ import {
   updateRecordingsDisplayIcon,
 } from "../../services/notifications";
 import "./NotificationsPage.css";
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
 export const NotificationsPage = () => {
   const username = localStorage.getItem("username");
@@ -150,9 +151,7 @@ export const NotificationsPage = () => {
         <div key={index}>{notification}</div>
       ))}
       {notifications.length > 0 && (
-        <button id="notifications-button" onClick={handleClearNotifications}>
-          Clear Notifications
-        </button>
+        <MainViewButton text="Clear Notifications" onClick={handleClearNotifications}/>
       )}
     </>
   );

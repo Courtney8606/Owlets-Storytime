@@ -32,3 +32,8 @@ img.LogoImage {
 .alignment-message {
   margin: none;
 }
+
+.nav-link.active {
+  border: 1px solid #00215e;
+  border-radius: 7px;
+}

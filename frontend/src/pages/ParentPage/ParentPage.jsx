@@ -10,7 +10,7 @@ import CreateRecordingRequest from "../../components/RecordingRequests/CreateRec
 import RequestConnection from "../../components/Connections/RequestConnection";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ChildViewButton from "../../components/ChildViewButton/ChildViewButton";
+import ChildViewButton from "../../components/Buttons/ChildModeButton";
 import { getConnectionsByParent } from "../../services/connections";
 // import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import ChildNameOrEditForm from "../../components/ChildSetorEdit/ChildSetorEditForm";

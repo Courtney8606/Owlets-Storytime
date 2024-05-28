@@ -3,6 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { createConnectionRequest } from "../../services/connections";
 import "./RequestConnection.css";
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
 const RequestConnection = ({ username, onSubmit }) => {
   const [readerUsername, setReaderUsername] = useState("");
@@ -43,14 +44,7 @@ const RequestConnection = ({ username, onSubmit }) => {
           onChange={handlerReaderUsernameChange}
         ></input>
         <br></br>
-        <button
-          className="submit-button"
-          role="submit-button"
-          id="submit"
-          type="submit"
-        >
-          Send
-        </button>
+        <MainViewButton text="Send" />
       </form>
       <div>
         <p>{error}</p>

@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { childSafetyMode } from "../../services/childSafetyMode";
+import MainViewButton from "./MainViewButton";
 
-const ChildViewButton = ({ className }) => {
+const ChildViewButton = ({ style }) => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     childSafetyMode();
@@ -11,14 +12,9 @@ const ChildViewButton = ({ className }) => {
 
   return (
     <div className="child-view">
-      <button
-        type="button"
-        className={`child-view-button ${className}`}
-        onClick={handleSubmit}
-        style={{ backgroundColor: "transparent", border: "None" }}
-      >
-        Child Mode
-      </button>
+      <Link to="/child">
+      <MainViewButton text="Child Mode" onClick={handleSubmit} style={style}/>
+      </Link>
     </div>
   );
 };

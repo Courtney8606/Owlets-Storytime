@@ -3,7 +3,6 @@ import ViewRecordingRequests from "../../components/RecordingRequests/ViewRecord
 import CreateRecordingRequest from "../../components/RecordingRequests/CreateRecordingRequest";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ChildViewButton from "../../components/ChildViewButton/ChildViewButton";
 import { getConnectionsByParent } from "../../services/connections";
 
 export const ParentRequestsPage = () => {

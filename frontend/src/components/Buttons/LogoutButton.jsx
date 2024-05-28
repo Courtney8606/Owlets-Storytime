@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { logoutservice } from "../../services/logout";
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
-const LogoutButton = ({ className }) => {
+const LogoutButton = ({ style }) => {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -12,18 +13,12 @@ const LogoutButton = ({ className }) => {
 
   return (
     <div className="logout">
-      <button
+      <MainViewButton
         type="button"
-        className={`logout-button ${className}`}
         onClick={logout}
-        style={{
-          backgroundColor: "transparent",
-          border: "None",
-          color: "#00215e",
-        }}
-      >
-        Logout
-      </button>
+        text="Log out"
+        style={style}
+      />
     </div>
   );
 };

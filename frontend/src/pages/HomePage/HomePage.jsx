@@ -1,8 +1,7 @@
-import ParentViewButton from "../../components/ParentViewButton/ParentViewButton";
-import ReaderViewButton from "../../components/ReaderViewButton/ReaderViewButton";
-import ChildViewButton from "../../components/ChildViewButton/ChildViewButton";
+import MainViewButton from "../../components/Buttons/MainViewButton";
+import ChildViewButton from "../../components/Buttons/ChildModeButton";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import parentImage from "../../assets/parent.jpg";
 import readerImage from "../../assets/reader3.jpg";
 import childImage from "../../assets/child2.jpg";
@@ -51,9 +50,9 @@ export const HomePage = () => {
                     <p className="card-text">
                       Manage your family connections and approvals
                     </p>
-                    <a href="#" className="btn btn-primary" id="custom-button">
-                      <ParentViewButton className="button-two" />
-                    </a>
+                    <Link to="/familyhub">
+                      <MainViewButton text="Family Hub" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -72,9 +71,9 @@ export const HomePage = () => {
                     <p className="card-text">
                       View your story requests and start recording
                     </p>
-                    <a href="#" className="btn btn-primary" id="custom-button">
-                      <ReaderViewButton className="button-two" />
-                    </a>
+                    <Link to="/storystudio">
+                      <MainViewButton text="Story Studio" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -93,9 +92,7 @@ export const HomePage = () => {
                     <p className="card-text">
                       Let your child safely request or listen to stories
                     </p>
-                    <a href="#" className="btn btn-primary" id="custom-button">
-                      <ChildViewButton />
-                    </a>
+                    <ChildViewButton/>
                   </div>
                 </div>
               </div>

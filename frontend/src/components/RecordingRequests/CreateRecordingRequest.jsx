@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createRecordingRequest } from "../../services/recordings";
 import PropTypes from "prop-types";
 import "./CreateRecordingRequest.css";
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
 const CreateRecordingRequest = ({ username, connections, onSubmit }) => {
   const [requestDescription, setRequestDescription] = useState("");
@@ -64,14 +65,7 @@ const CreateRecordingRequest = ({ username, connections, onSubmit }) => {
               ))}
           </select>
           <br />
-          <button
-            role="submit-button"
-            id="submit"
-            type="submit"
-            className="request-button"
-          >
-            Send
-          </button>
+          <MainViewButton text="Send" />
         </div>
       </form>
       <div>

@@ -1,6 +1,7 @@
 import { deleteCloudinaryUpload } from '../../services/recordings';
 import { deleteRecording } from '../../services/recordings';
 import PropTypes from 'prop-types';
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
 export const DeleteAudioButton = (props) => {
     const handleDelete = async() => {
@@ -15,9 +16,10 @@ export const DeleteAudioButton = (props) => {
     };
 
     return (
-        <button onClick={handleDelete}>
-            Delete
-        </button>
+        <div>
+        <MainViewButton text="Delete" onClick={handleDelete}/>
+        </div>
+
     );
 };
 

@@ -1,15 +1,13 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./NavigationBar.css";
 import logoImage from "../../assets/logo.png";
-import ParentViewButton from "../../components/ParentViewButton/ParentViewButton";
-import ReaderViewButton from "../../components/ReaderViewButton/ReaderViewButton";
-import LogoutButton from "../../components/LogoutButton/LogoutButton";
+import LogoutButton from "../../components/Buttons/LogoutButton";
 import { useDataContext } from "../../data/data";
-import NotificationsPageButton from "../NotificationsPageButton/NotificationsPageButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavigationBar.css";
-import ChildViewButton from "../ChildViewButton/ChildViewButton";
+import ChildViewButton from "../Buttons/ChildModeButton";
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
 export const NavigationBar = () => {
   const location = useLocation();
@@ -102,61 +100,77 @@ export const NavigationBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
-                  className={
-                    location.pathname === "/familyhub"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
-                  aria-current="page"
-                  href="/familyhub"
+              <NavLink
+                to="/familyhub"
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                aria-current="page"
                 >
-                  <ParentViewButton className="button-one" />
-                </a>
+                <MainViewButton text="Family Hub" 
+                style={{
+                  backgroundColor: "transparent",
+                  border: "None",
+                  color: "#00215e",
+                }}
+                />
+              </NavLink>
               </li>
               <li className="nav-item">
-                <a
-                  className={
-                    location.pathname === "/storystudio"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
-                  aria-current="page"
-                  href="/storystudio"
+                <NavLink
+                to="/storystudio"
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                aria-current="page"
                 >
-                  <ReaderViewButton className="button-one" />
-                </a>
+                <MainViewButton text="Story Studio" 
+                  style={{
+                  backgroundColor: "transparent",
+                  border: "None",
+                  color: "#00215e",
+                }} />
+              </NavLink>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  id="notifications"
-                  style={{ backgroundColor: "transparent", border: "None" }}
+              <NavLink
+                to="/notifications"
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                aria-current="page"
                 >
-                  <NotificationsPageButton />
-                  {showNewMessage && ( // Conditional rendering of New Message
+                <MainViewButton text="Notifications" 
+                style={{
+                  backgroundColor: "transparent",
+                  border: "None",
+                  color: "#00215e",
+                }}
+                />
+                {showNewMessage && ( // Conditional rendering of New Message
                     <p className="alignment message">
                       New <span id="message-icon">&#9993;</span>
                     </p>
                   )}
-                </a>
+              </NavLink>
               </li>
               <li className="nav-item">
-                <a
-                  className={
-                    location.pathname === "/child"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
-                  aria-current="page"
-                  href="/child"
+              <NavLink
+                to="/child"
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                aria-current="page"
                 >
-                  <ChildViewButton className="button-one" />
-                </a>
+                <ChildViewButton text="Child Mode" 
+                style={{
+                  backgroundColor: "transparent",
+                  border: "None",
+                  color: "#00215e",
+                }}
+                />
+              </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link">
-                  <LogoutButton />
+                  <LogoutButton 
+                  style={{
+                    backgroundColor: "transparent",
+                    border: "None",
+                    color: "#00215e",
+                  }}/>
                 </a>
               </li>
             </ul>

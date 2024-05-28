@@ -5,15 +5,14 @@ import {
   getRecordingRequestsByParent,
 } from "../../services/recordings";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import LogoutButton from "../../components/LogoutButton/LogoutButton";
+import { useNavigate, Link } from "react-router-dom";
 import { getUserDetails } from "../../services/users";
 import { getConnectionsByParent } from "../../services/connections";
 import CreateRecordingRequestChild from "../../components/RecordingRequests/CreateRecordingRequestChild";
 import ViewRecordingRequestsChild from "../../components/RecordingRequests/ViewRecordingRequestChild";
+import ChildViewButtonV2 from "../../components/Buttons/ChildViewButtonV2";
 import backgroundImage from "../../assets/childmode.png";
-import ChildModeStoryRequestsButton from "../../components/ChildViewButton/ChildModeStoryRequestsButton";
-import LogoutButtonChild from "../../components/LogoutButton/LogoutButtonChild";
+import LogoutButtonChild from "../../components/Buttons/LogoutButtonChild";
 import "./ChildStoriesPage.css";
 
 export const ChildStoriesPage = () => {
@@ -92,7 +91,9 @@ export const ChildStoriesPage = () => {
         </div>
         <div className="buttons-childmode">
           <LogoutButtonChild />
-          <ChildModeStoryRequestsButton />
+          <Link to="/childstoryrequests">
+            <ChildViewButtonV2 text="Request a story" />
+          </Link>
         </div>
       </div>
     </>

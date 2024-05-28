@@ -9,7 +9,7 @@ import {
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getConnectionsByReader } from "../../services/connections";
-import ChildViewButton from "../../components/ChildViewButton/ChildViewButton";
+import ChildViewButton from "../../components/Buttons/ChildModeButton";
 // import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 export const ReaderPage = () => {

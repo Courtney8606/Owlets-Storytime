@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../ReaderLandingPage/ReaderLandingPage.css";
-import ChildModeStoriesButton from "../../components/ChildViewButton/ChildModeStoriesButton";
-import ChildModeStoryRequestsButton from "../../components/ChildViewButton/ChildModeStoryRequestsButton";
+import ChildViewButtonV2 from "../../components/Buttons/ChildViewButtonV2";
 import "./ChildLandingPage.css";
 import backgroundImage from "../../assets/childmode.png";
-import LogoutButtonChild from "../../components/LogoutButton/LogoutButtonChild";
+import LogoutButtonChild from "../../components/Buttons/LogoutButtonChild";
 import owlImage from "../../assets/owl.png";
 
 export const ChildLandingPage = () => {
@@ -80,7 +79,7 @@ export const ChildLandingPage = () => {
                   >
                     <Link to="/childstories">
                       <i className="fa-solid fa-book childstoriesicons"></i>
-                      <ChildModeStoriesButton className="button-storystudio" />
+                      <ChildViewButtonV2 text="Your stories" />
                     </Link>
                   </div>
                 </div>
@@ -92,7 +91,7 @@ export const ChildLandingPage = () => {
                   >
                     <Link to="/childstoryrequests">
                       <i className="fa-brands fa-fort-awesome childstoriesicons"></i>
-                      <ChildModeStoryRequestsButton className="button-storystudio" />
+                      <ChildViewButtonV2 text="Request a story" />
                     </Link>
                   </div>
                 </div>

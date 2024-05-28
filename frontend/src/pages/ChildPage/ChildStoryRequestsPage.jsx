@@ -5,15 +5,14 @@ import {
   getRecordingRequestsByParent,
 } from "../../services/recordings";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import LogoutButton from "../../components/LogoutButton/LogoutButton";
+import { useNavigate, Link } from "react-router-dom";
 import { getUserDetails } from "../../services/users";
 import { getConnectionsByParent } from "../../services/connections";
 import CreateRecordingRequestChild from "../../components/RecordingRequests/CreateRecordingRequestChild";
 import ViewRecordingRequestsChild from "../../components/RecordingRequests/ViewRecordingRequestChild";
 import backgroundImage from "../../assets/childmode.png";
-import LogoutButtonChild from "../../components/LogoutButton/LogoutButtonChild";
-import ChildModeStoriesButton from "../../components/ChildViewButton/ChildModeStoriesButton";
+import LogoutButtonChild from "../../components/Buttons/LogoutButtonChild";
+import ChildViewButtonV2 from "../../components/Buttons/ChildViewButtonV2";
 import "./ChildStoryRequestsPage.css";
 
 export const ChildStoryRequestsPage = () => {
@@ -113,7 +112,9 @@ export const ChildStoryRequestsPage = () => {
         />
         <ViewRecordingRequestsChild data={recordingRequests} />
         <div id="buttons-childmode">
-          <ChildModeStoriesButton />
+          <Link to="/childstories">
+            <ChildViewButtonV2 text="Your stories" />
+          </Link>
           <LogoutButtonChild />
         </div>
       </div>

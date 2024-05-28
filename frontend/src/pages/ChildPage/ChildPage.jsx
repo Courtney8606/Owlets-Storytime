@@ -6,7 +6,7 @@ import {
 } from "../../services/recordings";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import LogoutButton from "../../components/LogoutButton/LogoutButton";
+import LogoutButton from "../../components/Buttons/LogoutButton";
 import { getUserDetails } from "../../services/users";
 import { getConnectionsByParent } from "../../services/connections";
 import CreateRecordingRequestChild from "../../components/RecordingRequests/CreateRecordingRequestChild";

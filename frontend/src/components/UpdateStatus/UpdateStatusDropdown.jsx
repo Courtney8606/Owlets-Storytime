@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import MainViewButton from "../../components/Buttons/MainViewButton";
 
 const UpdateStatusDropdown = ({
   options,
@@ -46,14 +47,7 @@ const UpdateStatusDropdown = ({
             </option>
           ))}
         </select>
-        <button
-          className="custom-button dropdown-button"
-          role="submit-button"
-          id="submit"
-          type="submit"
-        >
-          Update Status
-        </button>
+        <MainViewButton text="Update Status" />
       </form>
       <div>
         <p>{error}</p>
