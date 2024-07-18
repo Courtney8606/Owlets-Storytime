@@ -33,7 +33,7 @@ export const Footer = () => {
         <div className="footer col-12">
           <p style={{ color: "#00215e" }}>
             {" "}
-            *APP NAME* Connecting children with their relatives all around the
+            Owlets Storytime: Connecting children with their relatives all around the
             world
           </p>
           <a className="social-icon" href="#" target="blank">

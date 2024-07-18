@@ -12,13 +12,14 @@ import MainViewButton from "../../components/Buttons/MainViewButton";
 export const NavigationBar = () => {
   const location = useLocation();
   const [showNewMessage, setShowNewMessage] = useState(false);
-  const showNavbar = ![
-    "/signup",
-    "/login",
+  const showNavbar = !["/signup", "/login"].includes(location.pathname);
+
+  const isChildModePage = [
     "/childstories",
     "/childstoryrequests",
     "/child",
   ].includes(location.pathname);
+
   const {
     connectionsParent,
     connectionsReader,
@@ -74,6 +75,25 @@ export const NavigationBar = () => {
     return null;
   }
 
+  if (isChildModePage) {
+    return (
+      <div>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <div className="container-fluid">
+            <span className="navbar-brand">
+              <img
+                className="LogoImage"
+                role="logoImg"
+                alt="logo"
+                src={logoImage}
+              />
+            </span>
+          </div>
+        </nav>
+      </div>
+    );
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -100,77 +120,91 @@ export const NavigationBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-              <NavLink
-                to="/familyhub"
-                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                aria-current="page"
+                <NavLink
+                  to="/familyhub"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  aria-current="page"
                 >
-                <MainViewButton text="Family Hub" 
-                style={{
-                  backgroundColor: "transparent",
-                  border: "None",
-                  color: "#00215e",
-                }}
-                />
-              </NavLink>
+                  <MainViewButton
+                    text="Family Hub"
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "None",
+                      color: "#00215e",
+                    }}
+                  />
+                </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
-                to="/storystudio"
-                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                aria-current="page"
+                  to="/storystudio"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  aria-current="page"
                 >
-                <MainViewButton text="Story Studio" 
-                  style={{
-                  backgroundColor: "transparent",
-                  border: "None",
-                  color: "#00215e",
-                }} />
-              </NavLink>
+                  <MainViewButton
+                    text="Story Studio"
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "None",
+                      color: "#00215e",
+                    }}
+                  />
+                </NavLink>
               </li>
               <li className="nav-item">
-              <NavLink
-                to="/notifications"
-                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                aria-current="page"
+                <NavLink
+                  to="/notifications"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  aria-current="page"
                 >
-                <MainViewButton text="Notifications" 
-                style={{
-                  backgroundColor: "transparent",
-                  border: "None",
-                  color: "#00215e",
-                }}
-                />
-                {showNewMessage && ( // Conditional rendering of New Message
+                  <MainViewButton
+                    text="Notifications"
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "None",
+                      color: "#00215e",
+                    }}
+                  />
+                  {showNewMessage && ( // Conditional rendering of New Message
                     <p className="alignment message">
                       New <span id="message-icon">&#9993;</span>
                     </p>
                   )}
-              </NavLink>
+                </NavLink>
               </li>
               <li className="nav-item">
-              <NavLink
-                to="/child"
-                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                aria-current="page"
+                <NavLink
+                  to="/child"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  aria-current="page"
                 >
-                <ChildViewButton text="Child Mode" 
-                style={{
-                  backgroundColor: "transparent",
-                  border: "None",
-                  color: "#00215e",
-                }}
-                />
-              </NavLink>
+                  <ChildViewButton
+                    text="Child Mode"
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "None",
+                      color: "#00215e",
+                    }}
+                  />
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link">
-                  <LogoutButton 
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "None",
-                    color: "#00215e",
-                  }}/>
+                  <LogoutButton
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "None",
+                      color: "#00215e",
+                    }}
+                  />
                 </a>
               </li>
             </ul>

@@ -39,70 +39,58 @@ export const ChildLandingPage = () => {
   };
 
   return (
-    <>
-      <>
-        <div
-          className="childmode-container"
+    <div
+      className="childmode-container"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "rgba(255, 255, 255, 0.7)",
+      }}
+    >
+      <div className="container text-center test">
+        <img className="loginlogo" role="logoImg" alt="logo" src={owlImage} />
+        <h2
           style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundColor: "rgba(255, 255, 255, 0.7)",
+            fontFamily: "Chalkboard",
+            fontWeight: "bold",
+            color: "blue",
           }}
         >
-          <div
-            style={{ marginTop: "3rem" }}
-            className="container text-center test"
-          >
-            <img
-              className="loginlogo"
-              role="logoImg"
-              alt="logo"
-              src={owlImage}
-            />
-            <h2
-              style={{
-                fontFamily: "Chalkboard",
-                fontWeight: "bold",
-                color: "blue",
-              }}
-            >
-              Hello {childName}!
-            </h2>
-            <div className="card-container">
-              <div className="row row-cols-3 justify-content-center">
-                <div className="col">
-                  <div
-                    className="card"
-                    id="custom-card-child"
-                    style={{ width: "18rem" }}
-                  >
-                    <Link to="/childstories">
-                      <i className="fa-solid fa-book childstoriesicons"></i>
-                      <ChildViewButtonV2 text="Your stories" />
-                    </Link>
-                  </div>
-                </div>
-                <div className="col">
-                  <div
-                    className="card"
-                    style={{ width: "18rem" }}
-                    id="custom-card-child"
-                  >
-                    <Link to="/childstoryrequests">
-                      <i className="fa-brands fa-fort-awesome childstoriesicons"></i>
-                      <ChildViewButtonV2 text="Request a story" />
-                    </Link>
-                  </div>
-                </div>
+          Hello {childName}!
+        </h2>
+        <div className="card-container">
+          <div className="row row-cols-3 justify-content-center">
+            <div className="col">
+              <div
+                className="card"
+                id="custom-card-child"
+                style={{ width: "18rem" }}
+              >
+                <Link to="/childstories">
+                  <i className="fa-solid fa-book childstoriesicons"></i>
+                  <ChildViewButtonV2 text="Your stories" />
+                </Link>
               </div>
             </div>
-            <div className="logout-child-landing">
-              <LogoutButtonChild />
+            <div className="col">
+              <div
+                className="card"
+                style={{ width: "18rem" }}
+                id="custom-card-child"
+              >
+                <Link to="/childstoryrequests">
+                  <i className="fa-brands fa-fort-awesome childstoriesicons"></i>
+                  <ChildViewButtonV2 text="Request a story" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </>
-    </>
+        <div className="logout-child-landing">
+          <LogoutButtonChild />
+        </div>
+      </div>
+    </div>
   );
 };

@@ -32,7 +32,6 @@ export const HomePage = () => {
       ) : (
         <>
           <h3 style={{ marginTop: "2rem" }}>Welcome {username}!</h3>
-          <p>Please select from the below</p>
           <div style={{ marginTop: "3rem" }} className="container text-center">
             <div className="row row-cols-3 justify-content-center">
               <div className="col">
@@ -92,7 +91,7 @@ export const HomePage = () => {
                     <p className="card-text">
                       Let your child safely request or listen to stories
                     </p>
-                    <ChildViewButton/>
+                    <ChildViewButton />
                   </div>
                 </div>
               </div>

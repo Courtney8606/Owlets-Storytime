@@ -7,7 +7,7 @@
 }
 
 .social-icon:hover {
-  color: #8cc0de;
+  color: #8a2952;
 }
 
 .footer {
@@ -15,10 +15,10 @@
   padding-top: 20px;
   padding-bottom: 10px;
   background-color: #8cc0de;
-  /* position: fixed; */
+  position: fixed;
   width: 100vw;
-  bottom:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   right: 0;
 }
 

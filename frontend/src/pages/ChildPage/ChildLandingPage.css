@@ -1,3 +1,15 @@
+/* ChildLandingPage.css */
+.childmode-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
 #custom-card-child {
   /* border: 7px solid rgba(204, 238, 188, 0.5); */
   /* border: 7px solid #94ffd8; */
@@ -44,8 +56,4 @@
 .logout-child-landing {
   padding-bottom: 150px;
   padding-top: 20px;
-}
-
-.test {
-  padding-top: 150px;
 }
